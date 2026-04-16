@@ -54,7 +54,7 @@ int main(){
 
         // Esperar antes de volver a escanear  
         //#ifdef _WIN32  
-        SLEEP_MS(250000); // 10 segundos en milisegundos  
+        SLEEP_MS(10000); // 10 segundos en milisegundos  
        // #else  
         //SLEEP_MS(10000); // 10 segundos en microsegundos  
         //#endif  

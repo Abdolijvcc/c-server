@@ -1,7 +1,7 @@
 # ignorar archivos compilados de C
 *.o
 *.out
-*.exe
+*.ex
 
 
 # ignorar archivos temporales

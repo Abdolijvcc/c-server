@@ -13,6 +13,13 @@
 #define SEPARADOR_RUTA "/"
 #endif
 
+#ifdef _WIN32  
+#include <windows.h>  
+#define SLEEP_MS(ms) Sleep(ms)  
+#else  
+#include <unistd.h>  
+#define SLEEP_MS(ms) usleep((ms) * 1000)  
+#endif
 void configurar_consola(void);
 
 #endif

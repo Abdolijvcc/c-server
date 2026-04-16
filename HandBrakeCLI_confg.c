@@ -45,8 +45,7 @@ void compress_video(const char *input, const char *output) {
     if (result == 0){
         printf("\nCompresion completada: %s\n", output);
         // Eliminar archivo original 
-        // pregunta si el usuario quiere eliminar el archivo original despues de comprimirlo, para ahorrar espacio en disco, o si prefiere conservarlo. Por defecto se podria dejar que se elimine, pero con una opcion para conservarlo si el usuario lo desea.
-        char respuesta[4];
+        /* char respuesta[4];
         printf("¿Quieres eliminar el archivo original para ahorrar espacio? (s/n): ");
         scanf("%3s", respuesta);
         if (strcmp(respuesta, "s") == 0 || strcmp(respuesta, "S") == 0) {
@@ -57,12 +56,12 @@ void compress_video(const char *input, const char *output) {
             }  
         } else {
             printf("Archivo original conservado: %s\n", input);
-        }
-        /* if (remove(input) == 0) {  
+        } */
+        if (remove(input) == 0) {  
             printf("Archivo original eliminado: %s\n", input);  
         } else {  
             printf("Error al eliminar archivo original: %s\n", input);  
-        } */  
+        }  
 
         }
     else{

@@ -8,7 +8,8 @@
 #include <string.h>
 #include "filter.h"
 
-const char *lista[] = {".mp4", ".mkv", ".avi", ".mov", ".wmv"};
+const char *lista[] = {".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm", ".m4v", ".3gp", ".3g2", ".mts", ".m2ts", ".ts", ".vob", ".mpeg", ".mpg", ".iso"};
+
 
 const char* es_video(const char *nombre_del_archivo){
     int numero_de_extensiones = 5;

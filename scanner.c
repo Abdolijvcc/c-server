@@ -50,6 +50,17 @@ void recorrer_directorios(const char *ruta_actual){
             recorrer_directorios(ruta_completa);
         } else {
             printf(" -> es un archivo\n");
+        /* 
+            FILE *fp;
+
+            fp=fopen(ruta_completa,"a");
+
+            fprintf(fp, "%s", ruta_completa); // Si el archivo no existe, se crea. Si existe, no se modifica su contenido
+            //si el nomero de archivo ya esta en txt eso segnafica que ya se ha procesado, entunces no hace falta compremirlo
+            if ()
+            {
+            } */
+            
 
             if (es_video(entrada->d_name) != NULL){
                 printf("Archivo valido: %s\n", ruta_completa);

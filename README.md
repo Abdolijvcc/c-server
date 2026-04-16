@@ -55,6 +55,15 @@ proyecto/
 ---
 
 ## Encoding Configuration
+> [!IMPORTANT]
+> To verify the configuration, run the following command:
+>
+> ```bash
+> cd bin
+> HandBrakeCLI.exe -help
+> ```
+>
+> This will display all available encoding and configuration options.
 
 Optimized for balanced quality and size:
 
@@ -108,6 +117,8 @@ gcc -Wall -Wextra -pedantic main.c platform.c scanner.c queue.c filter.c worker.
 ---
 
 ## Notes
+> [!NOTE]
+> This is a note
 
 Lower -q means higher quality and larger file size.
 Higher -q means lower quality and smaller file size.

@@ -20,6 +20,7 @@ void configurar_consola(void){
     _setmode(_fileno(stdout), _O_U8TEXT);
 }
 #else
+
 #include <locale.h>
 
 void configurar_consola(void){

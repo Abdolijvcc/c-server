@@ -1,0 +1,9 @@
+# ignorar archivos compilados de C
+*.o
+*.out
+*.exe
+
+
+# ignorar archivos temporales
+*.tmp
+*.log

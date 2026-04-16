@@ -1,5 +1,18 @@
 /*
-aqií va el código de cada módulo, con comentarios explicando lo que hace cada función. 
-Luego lo juntaremos todo en main.c y platform.h
+- Separar Windows y Linux con ifdef
+- Incluir cabeceras segun sistema
+- Dejar una base simple para usar despues
 */
-//use #ifdef and #else to separate Windows and Linux code in platform.h, and include the necessary headers for each platform.
+
+#ifndef PLATFORM_H
+#define PLATFORM_H
+
+#ifdef _WIN32
+#define SEPARADOR_RUTA "\\"
+#else
+#define SEPARADOR_RUTA "/"
+#endif
+
+void configurar_consola(void);
+
+#endif

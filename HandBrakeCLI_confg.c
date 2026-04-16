@@ -42,8 +42,29 @@ void compress_video(const char *input, const char *output) {
     }
 
     int result = pclose(fp);
-    if (result == 0)
+    if (result == 0){
         printf("\nCompresion completada: %s\n", output);
+        // Eliminar archivo original 
+        // pregunta si el usuario quiere eliminar el archivo original despues de comprimirlo, para ahorrar espacio en disco, o si prefiere conservarlo. Por defecto se podria dejar que se elimine, pero con una opcion para conservarlo si el usuario lo desea.
+        char respuesta[4];
+        printf("¿Quieres eliminar el archivo original para ahorrar espacio? (s/n): ");
+        scanf("%3s", respuesta);
+        if (strcmp(respuesta, "s") == 0 || strcmp(respuesta, "S") == 0) {
+           if (remove(input) == 0) {  
+                printf("Archivo original eliminado: %s\n", input);  
+            } else {  
+                printf("Error al eliminar archivo original: %s\n", input);  
+            }  
+        } else {
+            printf("Archivo original conservado: %s\n", input);
+        }
+        /* if (remove(input) == 0) {  
+            printf("Archivo original eliminado: %s\n", input);  
+        } else {  
+            printf("Error al eliminar archivo original: %s\n", input);  
+        } */  
+
+        }
     else{
         printf("\nError. Codigo: %d\n", result);
         printf("Revisa si el video de entrada es correcto, si el preset es compatible con tu version de HandBrakeCLI, o si tienes permisos para escribir en la carpeta de salida.\n");

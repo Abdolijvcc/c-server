@@ -7,7 +7,13 @@
 
 #include <stdio.h>
 #include "watcher.h"
+#include "queue.h"
+
+
 
 void vigilar_directorio(const char *ruta){
     printf("Watcher pendiente de implementar para: %s\n", ruta);
+
+    //cuando detecte un nuevo archivo, hacer algo como:
+    
 }

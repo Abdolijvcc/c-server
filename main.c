@@ -12,14 +12,18 @@
 #include "scanner.h"
 #include "worker.h"
 #include "watcher.h"
+//#include <sys/stat.h>
+#include <stdlib.h>
 
 Cola miCola;
 
-int main( void ){
+int main(){
+   
     const char *ruta_entrada = "C:\\Users\\User\\Videos";
     const char *ruta_salida = "C:\\Users\\User\\Videos\\convertidos";
+    system("mkdir C:\\Users\\User\\Videos\\convertidos");
 
-    configurar_consola();
+    //configurar_consola();
     inicializarCola(&miCola, 10);
 
     printf("Escaneando carpeta inicial...\n");
@@ -32,5 +36,6 @@ int main( void ){
     vigilar_directorio(ruta_entrada);
 
     liberar_cola(&miCola);
+
     return 0;
 }

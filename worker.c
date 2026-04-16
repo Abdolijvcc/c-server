@@ -11,6 +11,9 @@
 #include "platform.h"
 #include "worker.h"
 #include "queue.h"
+#include "HandBrakeCLI_confg.h"
+#include <sys/stat.h>
+
 
 void procesar_cola(const char *ruta_salida){
     while (!esVacia(&miCola)){
@@ -31,9 +34,11 @@ void procesar_cola(const char *ruta_salida){
             nombre_archivo++;
         }
 
+        //char *hola = mkdir(ruta_salida, 0755); // Crear carpeta de salida si no existe
+
         snprintf(ruta_final, sizeof(ruta_final), "%s%s%s", ruta_salida, SEPARADOR_RUTA, nombre_archivo);
 
-        snprintf(comando, sizeof(comando),
+        /* snprintf(comando, sizeof(comando),
             "bin/HandBrakeCLI.exe -i \"%s\" -o \"%s\" "
             "--preset \"Very Fast 480p30\" "
             "-e x265 "
@@ -43,7 +48,14 @@ void procesar_cola(const char *ruta_salida){
             "-E av_aac "
             "2>&1",
             elemento.ruta, ruta_final
-        );
+        ); */
+        
+        
+        //hacer un fork() aqui para no bloquear el proceso principal mientras se comprime el video, y asi poder seguir procesando la cola y vigilando el directorio
+        //hacer un variable que contine la ruta de salida del video 
+        
+
+        compress_video(elemento.ruta, ruta_final);
 
         printf("Procesando: %s\n", elemento.ruta);
         printf("Comando: %s\n", comando);

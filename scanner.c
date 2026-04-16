@@ -42,6 +42,11 @@ void recorrer_directorios(const char *ruta_actual){
 
         if (S_ISDIR(info.st_mode)){
             printf(" -> es un directorio. Recursividad...\n");
+            //si es la ruta de salida, no entrar para evitar bucle infinito
+            if (strcmp(ruta_completa, "C:\\Users\\User\\Videos\\convertidos") == 0){
+                printf(" -> es la carpeta de salida, no entro para evitar bucle infinito\n");
+                continue;
+            }
             recorrer_directorios(ruta_completa);
         } else {
             printf(" -> es un archivo\n");
